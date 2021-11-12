@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Extractor</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/bootstrap_5.1.0/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="content d-grid">
+      <div class="space"></div>
+      <div class="main container justify-content-between">
+        <img src="./amazon.png" alt="" width="40%" height="90%" />
+        <!-- src="https://embed.lottiefiles.com/animation/63921" -->
+        <div class="main__menu justify-content-center">
+          <div class="main__menu--tool d-grid">
+            <h1 class="main__menu--tool-heading">Đồ Án</h1>
+            <h2 class="main__menu--tool-heading-h2">Môn: Điện Toán Đám Mây</h2>
+            <h2 class="main__menu--tool-heading-h3">GV:TS. Huỳnh Xuân Phụng</h2>
+            <form
+              method="POST"
+              ,
+              action="http://localhost:5000/extract"
+              ,
+              enctype="multipart/form-data"
+              class="main__menu--tool-form"
+            >
+              <input type="file" , name="filename" />
+              <button type="submit">Extract Image</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="main__menu--tool-row-comment"></div>
+      <div class="space"></div>
+    </div>
+
+    <div class="container"></div>
+    <script>
+      let dataFromApi = JSON.parse({{jsonData|tojson}})
+      console.log(dataFromApi);
+      document.querySelector(".container").innerHTML = dataFromApi.text
+    </script>
+  </body>
+</html>

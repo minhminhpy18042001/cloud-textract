@@ -1,0 +1,46 @@
+.content {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.39)),
+                        url('https://utex.hcmute.edu.vn/pluginfile.php/1/theme_maker/loginbgimage/1634220818/57f4e15cb6bc4be212ad.jpg');
+    height: 100vh;
+}
+.main{
+    display: flex;
+    margin-top: 0.5vh;
+    background-color: #ffffff;
+    box-shadow:2px 4px 14px #03030342;
+    border-radius: 30px;
+    max-height: 85vh;
+    width:75%;
+    &__menu{     
+        width: 60%;
+        &--tool{
+            margin-right: -2%;
+            background-color: #e4e3e236;
+            border-radius: 0px 30px 30px 0px;
+            height: 100%;
+            padding:  25px 63px 25px 63px;      
+            &-heading{
+                font-size: 40px;
+                font-weight: bold;
+                color: #373941;
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 10px;
+            }
+            &-heading-h2{
+                @extend .main__menu--tool-heading;
+                font-size: 20px;
+                margin-top: -120px;
+            }
+            &-heading-h3{
+                @extend .main__menu--tool-heading;
+                font-size: 20px;
+                margin-top: -200px;
+            }
+            &-form{
+                margin-top: -260px;
+                margin-left: 50px;
+            }
+        }
+    }
+} 
