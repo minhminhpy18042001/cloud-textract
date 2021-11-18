@@ -2,8 +2,9 @@ from flask import Flask, request, render_template
 import json
 import boto3
 
-textractclient = boto3.client("textract", aws_access_key_id="ASIA47S4R7F2I2HLMCJH",
-                              aws_secret_access_key="yuiNVay4P0+7WTsnBpMiRtUKgceiakCEEwt6+UZE", region_name="us-east-1")
+textractclient = boto3.client("textract", aws_access_key_id="ASIA47S4R7F2CGREHWLH",
+                              aws_secret_access_key="Mp4q2akqvnzcy0C5vAKMZpu4gdhyeymUiYa1tRC3",
+                              aws_session_token="FwoGZXIvYXdzEBgaDKypzSMJapZPYx/5IyLPAUviEsK/TuLM52HFqIWijZO9oG5/6eqZ4vscIleBJjFEno2o4ax6xYhP4KSjpqn2acbGpNdr8GI39OGIFoMeKpreETD0iw6JEpyAIpIq0ol98OnDf5hqVaZzzmh1OF4+hc51n1bsxiYUFXAfafVOfKnEQ2rtRcVxu6efuslJvsqa5+5rERKbn1XAyCJvrUdPfwmwmHvQBDc54YL5qu3xO4d1AIl5kUWZasZ75VBwRAfFmyjExTzW0MbBuw3B0Tz2MhyFK23Z4/Ws54stp8sIjyju0tmMBjItlr2O8qP2m8iLgnAiA9+Wbm1flCSLA9M2fMjYedtIq+4cV8YkSuP94pKwGJZg")
 
 
 app = Flask(__name__)
@@ -24,9 +25,7 @@ def extractImage():
             'Bytes': binaryFile
         }
     )
-
     extractedText = ""
-
     for block in response['Blocks']:
         if block["BlockType"] == "LINE":
             # print('\033[94m' + item["Text"] + '\033[0m')
