@@ -3,6 +3,6 @@
 <br> <h2>Thành viên nhóm : </h2>
 <br> Nguyễn Hoàng Phúc&nbsp;19110052
 <br> Tạ Bảo Minh&emsp;&emsp;&emsp;&emsp;19110399
-<br> Nguyễn Minh Luân&nbsp;&emsp;19110395
+<br> Nguyễn Minh Luân&emsp;19110395
 <br>
 <h3>How to run my code </h3> 
