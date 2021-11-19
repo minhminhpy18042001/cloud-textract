@@ -1,5 +1,5 @@
 # Cloud-Textract 
-<br>Đề tài: Tìm hiểu về Amazon Textract và viết ứng dụng minh hoạ về Amazon Textract 
+<br> <h2>Đề tài: Tìm hiểu về Amazon Textract và viết ứng dụng minh hoạ về Amazon Textract </h2>
 <br> Thành viên nhóm : 
 <br> Nguyễn Hoàng Phúc    19110052
 <br> Tạ Bảo Minh          19110399
