@@ -2,9 +2,9 @@ from flask import Flask, request, render_template
 import json
 import boto3
 
-textractclient = boto3.client("textract", aws_access_key_id="ASIA47S4R7F2CGREHWLH",
-                              aws_secret_access_key="Mp4q2akqvnzcy0C5vAKMZpu4gdhyeymUiYa1tRC3",
-                              aws_session_token="FwoGZXIvYXdzEBgaDKypzSMJapZPYx/5IyLPAUviEsK/TuLM52HFqIWijZO9oG5/6eqZ4vscIleBJjFEno2o4ax6xYhP4KSjpqn2acbGpNdr8GI39OGIFoMeKpreETD0iw6JEpyAIpIq0ol98OnDf5hqVaZzzmh1OF4+hc51n1bsxiYUFXAfafVOfKnEQ2rtRcVxu6efuslJvsqa5+5rERKbn1XAyCJvrUdPfwmwmHvQBDc54YL5qu3xO4d1AIl5kUWZasZ75VBwRAfFmyjExTzW0MbBuw3B0Tz2MhyFK23Z4/Ws54stp8sIjyju0tmMBjItlr2O8qP2m8iLgnAiA9+Wbm1flCSLA9M2fMjYedtIq+4cV8YkSuP94pKwGJZg")
+textractclient = boto3.client("textract", aws_access_key_id="ASIA47S4R7F2BFBS4PXP",
+                              aws_secret_access_key="qvfJWGZ7YegyqdHvAO1OAKs1XZGoYsyqAzw/Tb/s",
+                              aws_session_token="FwoGZXIvYXdzEBwaDCnzCUmxmBD3d7AqoSLPAR9nxk9iZMwjqL848WSAt7BgM+gu2Oi5pR37Qfmqsduh/Cr8mA37AUIrYGD5CYuKRNa+Zb/LEb2+HvF8b4C0gMn0HkxjaqltkSFLmUNSjTfM+aryezw/z4AdpqlRUOBFNFchE3QEuV5K3KgbnVRB1jNinDgex9nQzURSp3jcieRuFacTHp37EAVTk9g4D9Ap7P6mWzT712eTuh41QHnHt7qsLuJlWEFnbxdEpdS71bg66JoRS1LfgJQGE5X2DQFMj/sd5zhXNuhO3BAvU5uZ4SibtNqMBjItS+kSZsWhl+VbpDmttGT5lvpR+cek2DGv47lkydlVaVaGZHuLugBxFejhUOLV")
 
 
 app = Flask(__name__)
