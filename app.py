@@ -2,9 +2,9 @@ from flask import Flask, request, render_template
 import json
 import boto3
 
-textractclient = boto3.client("textract", aws_access_key_id="ASIA47S4R7F2BFBS4PXP",
-                              aws_secret_access_key="qvfJWGZ7YegyqdHvAO1OAKs1XZGoYsyqAzw/Tb/s",
-                              aws_session_token="FwoGZXIvYXdzEBwaDCnzCUmxmBD3d7AqoSLPAR9nxk9iZMwjqL848WSAt7BgM+gu2Oi5pR37Qfmqsduh/Cr8mA37AUIrYGD5CYuKRNa+Zb/LEb2+HvF8b4C0gMn0HkxjaqltkSFLmUNSjTfM+aryezw/z4AdpqlRUOBFNFchE3QEuV5K3KgbnVRB1jNinDgex9nQzURSp3jcieRuFacTHp37EAVTk9g4D9Ap7P6mWzT712eTuh41QHnHt7qsLuJlWEFnbxdEpdS71bg66JoRS1LfgJQGE5X2DQFMj/sd5zhXNuhO3BAvU5uZ4SibtNqMBjItS+kSZsWhl+VbpDmttGT5lvpR+cek2DGv47lkydlVaVaGZHuLugBxFejhUOLV")
+textractclient = boto3.client("textract", aws_access_key_id="ASIA47S4R7F2GVZ4C7FT",
+                              aws_secret_access_key="9rfoYItgVrCaFXKlfi524Z+lWcYHW5MYgGF6xhHg",
+                              aws_session_token="FwoGZXIvYXdzEKn//////////wEaDLtXOu5PTV15kz9dxyLPAfEnLe/Hvl+q2Wgs5BdoZrDe/Kc3rNbJKxB0tIffa7EPzBHlEF0DSPrFeMfaY4BEAgbh29sV6bpSYxjVxcVTjoAAvE7/al9MeGl6weAFq1bx2KOXCrZnCWl6vSS0xd6MZ84Ql+1GP5+b3g0zKbQLkQm8bVktT+LKm9GjyjVYCTPhB5QW+Lx3zFqI44YICjfv9w63tcPEww1qwhyAOToPwcUO8XviMOYnQbD7qN8se5/bOjXDhiF/WdEw8SNYISJCeknJaTNcWoZ2V4IMsXXM9CiCtvmMBjItHltksAfBKbRS6J+huENVkij3Bm539zasvkiDcnqJIu8/2H61GUbbAfihtAvp")
 
 
 app = Flask(__name__)
@@ -12,7 +12,12 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def main():
-    return render_template("index.html", jsonData=json.dumps({}))
+    extractedText = ""
+    responseJson = {
+
+        "text": extractedText
+    }
+    return render_template("index.html", jsonData=json.dumps(responseJson))
 
 
 @app.route("/extract", methods=["POST"])

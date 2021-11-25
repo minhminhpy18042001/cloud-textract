@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Extractor</title>
-
     <link
       rel="stylesheet"
       href="{{ url_for('static',filename='./bootstrap.5.css') }}"
@@ -14,10 +13,57 @@
       rel="stylesheet"
       href="{{ url_for('static',filename='./index.css') }}"
     />
+
     <!-- 
     <link rel="stylesheet" href="/static/bootstrap.5.css" />
     <link rel="stylesheet" href="/static/index.css" />
-    -->
+     -->
+    <script>
+      function Export2Word(element, filename = "") {
+        var preHtml =
+          "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+        var postHtml = "</body></html>";
+        var html =
+          preHtml + document.getElementById(element).innerHTML + postHtml;
+
+        var blob = new Blob(["\ufeff", html], {
+          type: "application/msword",
+        });
+        var url =
+          "data:application/vnd.ms-word;charset=utf-8," +
+          encodeURIComponent(html);
+        filename = filename ? filename + ".doc" : "textract.doc";
+        var downloadLink = document.createElement("a");
+        document.body.appendChild(downloadLink);
+        if (navigator.msSaveOrOpenBlob) {
+          navigator.msSaveOrOpenBlob(blob, filename);
+        } else {
+          downloadLink.href = url;
+          downloadLink.download = filename;
+          downloadLink.click();
+        }
+        document.body.removeChild(downloadLink);
+      }
+      function exportTableToExcel(tableID, filename = "") {
+        var downloadLink;
+        var dataType = "application/vnd.ms-excel";
+        var tableSelect = document.getElementById(tableID);
+        var tableHTML = tableSelect.outerHTML.replace(/ /g, "%20");
+        filename = filename ? filename + ".xls" : "textract_data.xls";
+        downloadLink = document.createElement("a");
+        document.body.appendChild(downloadLink);
+        if (navigator.msSaveOrOpenBlob) {
+          var blob = new Blob(["\ufeff", tableHTML], {
+            type: dataType,
+          });
+          navigator.msSaveOrOpenBlob(blob, filename);
+        } else {
+          downloadLink.href = "data:" + dataType + ", " + tableHTML;
+          downloadLink.download = filename;
+          downloadLink.click();
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="content d-grid">
@@ -27,8 +73,6 @@
         <div class="main__menu justify-content-center">
           <div class="main__menu--tool d-grid">
             <h1 class="main__menu--tool-heading">Đồ Án</h1>
-            <h2 class="main__menu--tool-heading-h2">Môn: Điện Toán Đám Mây</h2>
-            <h2 class="main__menu--tool-heading-h3">GV:TS. Huỳnh Xuân Phụng</h2>
             <form
               method="POST"
               ,
@@ -40,7 +84,18 @@
               <input type="file" , name="filename" />
               <button type="submit" class="submit-button">Extract Image</button>
             </form>
-            <div class="text"></div>
+            <div class="text" id="text"></div>
+            <div class="tool d-flex justify-content-between">
+              <button class="download-word" onclick="Export2Word('text');">
+                Download File .Docx
+              </button>
+              <button
+                class="download-excel"
+                onclick="exportTableToExcel('text')"
+              >
+                Download File .xlsx
+              </button>
+            </div>
           </div>
         </div>
       </div>
