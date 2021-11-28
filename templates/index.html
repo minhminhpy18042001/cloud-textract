@@ -67,34 +67,46 @@
   </head>
   <body>
     <div class="content d-grid">
-      <div class="space"></div>
       <div class="main justify-content-between" style="z-index: 1">
-        <img src="/static/amazon.png" alt="SAP Logo" width="43%" height="80%" />
+        <div class="textlabel">
+          <h5 class="texttitle">Result:</h5>
+          <div class="text" id="text"></div>
+        </div>
         <div class="main__menu justify-content-center">
           <div class="main__menu--tool d-grid">
             <h1 class="main__menu--tool-heading">Đồ Án</h1>
+            <h3 class="main__menu--tool-heading-h2">Môn Điện toán đám mây</h3>
+            <h3 class="main__menu--tool-heading-h3">Gv: TS.Huỳnh Xuân Phụng</h3>
             <form
               method="POST"
               ,
-              action="http://localhost:5000/extract"
+              action="http://localhost:5000/extracttext"
               ,
               enctype="multipart/form-data"
-              class="main__menu--tool-form"
+              class="main__menu--tool-form1"
             >
-              <input type="file" , name="filename" />
-              <button type="submit" class="submit-button">Extract Image</button>
+              <input type="file" , name="filename" class="filebutton" />
+              <button type="submit" class="submit-button">Extract Text</button>
             </form>
-            <div class="text" id="text"></div>
+            <form
+              method="POST"
+              ,
+              action="http://localhost:5000/extracttable"
+              ,
+              enctype="multipart/form-data"
+              class="main__menu--tool-form2"
+            >
+              <input type="file" , name="filename" class="filebutton" />
+              <button type="submit" class="submit-button">Extract Table</button>
+            </form>
             <div class="tool d-flex justify-content-between">
               <button class="download-word" onclick="Export2Word('text');">
-                Download File .Docx
+                Download .docx
               </button>
-              <button
-                class="download-excel"
-                onclick="exportTableToExcel('text')"
-              >
-                Download File .xlsx
+              <button class="download-csv">
+                <a href="{{url_for('download_file')}}">Download .csv</a>
               </button>
+              <button class="download-xls">Download .xls</button>
             </div>
           </div>
         </div>

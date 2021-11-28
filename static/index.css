@@ -10,8 +10,9 @@
     border-radius: 30px;
     max-height: 75vh;
     margin-left: 180px;
-    margin-top: -190px;
+    margin-top: 100px;
     width: 75%;
+    box-shadow: 0 0 1em #e6e9f9;
 }
 
 .main__menu {
@@ -19,7 +20,6 @@
 }
 
 .main__menu--tool {
-    margin-right: -2%;
     background-color: #e4e3e236;
     border-radius: 0px 30px 30px 0px;
     height: 100%;
@@ -33,15 +33,51 @@
     text-align: center;
 }
 
+.main__menu--tool-heading-h2 {
+    font-size: 17px;
+    margin-top: -80px;
+    margin-left: 85px;
+}
+
+.main__menu--tool-heading-h3 {
+    font-size: 19px;
+    margin-top: -130px;
+    margin-left: 65px;
+}
 
 
-.main__menu--tool-form {
-    margin-left: 0px;
-    margin-top: -100px;
+
+.main__menu--tool-form1 {
+    margin-left: 20px;
+    margin-top: -150px;
+}
+
+.main__menu--tool-form2 {
+    margin-left: 20px;
+    margin-top: -170px;
+}
+
+.textlabel {
+    width: 700px;
+    margin: 20px 0px 0px 30px;
+    max-height: 75vh;
+
 }
 
 .text {
-    margin-top: -160px;
+    display: block;
+    height: 65vh;
+    width: 500px;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+.filebutton {
+    width: 210px;
 }
 
 .submit-button {
@@ -54,24 +90,44 @@
     background-color: rgb(54, 243, 54);
 }
 
-.download-excel {
-    border: none;
-    border-radius: 10px;
-    background-color: rgb(176, 177, 176);
-    height: 25px;
-}
 
-.download-excel:hover {
-    background-color: rgb(54, 243, 54);
-}
 
 .download-word {
     border: none;
     border-radius: 10px;
-    background-color: rgb(176, 177, 176);
+    background-color: rgb(159, 250, 159);
     height: 25px;
+    margin-left: -30px;
 }
 
 .download-word:hover {
+    background-color: rgb(54, 243, 54);
+}
+
+.download-csv {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(159, 250, 159);
+    height: 25px;
+}
+
+.download-csv a {
+    text-decoration: none;
+    color: black;
+}
+
+.download-csv:hover {
+    background-color: rgb(54, 243, 54);
+}
+
+.download-xls {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(159, 250, 159);
+    height: 25px;
+    margin-right: -30px;
+}
+
+.download-xls:hover {
     background-color: rgb(54, 243, 54);
 }
