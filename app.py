@@ -3,7 +3,6 @@ import json
 import boto3
 import cgi
 import textract_python_table_parser
-
 account_id = ""
 account_key = ""
 account_token = ""

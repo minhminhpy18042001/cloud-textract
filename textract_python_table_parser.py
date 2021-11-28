@@ -9,7 +9,6 @@ from pprint import pprint
 import pandas as pd
 import html_to_json
 from trp import Document
-import app
 
 
 def get_rows_columns_map(table_result, blocks_map):
@@ -43,11 +42,6 @@ def get_text(result, blocks_map):
                         if word['SelectionStatus'] == 'SELECTED':
                             text += 'X '
     return text
-
-
-def get_key_AWS():
-    client = app.client()
-    return client
 
 
 def get_table_csv_results(file_name, account):
