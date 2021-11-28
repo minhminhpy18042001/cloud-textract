@@ -1,28 +1,14 @@
 Table: Table_1
 
-Who? ,What activity is mentioned? ,What does he/she think of it? ,
-Emily ,Hanging out with friends (window shopping) ,She loves it. ,
-Hang ,cloud watching ,She adores it. It's easy. ,
-Linn ,Going to community centre ,She loves it. ,
-Minh ,playing football choir bóng da Helping his aunt in running cooking classes. ,He likes it. It's fun. ,
-Manuel ,playing Computer games doing judo ,He is addicted to it. It's OK ,
-
-
-
-
-
-Table: Table_2
-
-,ID ,Year ,Reglon ,2017 Revenue ,2018 Revenue ,% Change ,
-,1 ,2017 ,East ,$80.191 ,$83.115 ,3.65% ,
-,2 ,2017 ,West ,$80.773 ,$93.038 ,15.18% ,
-,3 ,2017 ,North ,$59.707 ,$75.716 ,26.81% ,
-,4 ,2017 ,South ,$39.796 ,$34.293 ,-13.83% ,
-,5 ,2018 ,East ,$68.100 ,$68.100 ,0.00% ,
-,6 ,2018 ,West ,$98.456 ,$122.714 ,24.64% ,
-,7 ,2018 ,North ,$84.487 ,$30.670 ,-63.70% ,
-,8 ,2018 ,South ,$95.793 ,$138.856 ,44.95% ,
-,,,,,,,
+ID ,Year ,Region ,2017 Revenue ,2018 Revenue ,% Change ,
+1 ,2017 ,East ,$80.191 ,$83.115 ,3.65% ,
+2 ,2017 ,West ,$80.773 ,$93.038 ,15.18% ,
+3 ,2017 ,North ,$59.707 ,$75.716 ,26.81% ,
+4 ,2017 ,South ,$39.796 ,$34.293 ,-13.83% ,
+5 ,2018 ,East ,$68.100 ,$68.100 ,0.00% ,
+6 ,2018 ,West ,$98.456 ,$122.714 ,24.64% ,
+7 ,2018 ,North ,$84.487 ,$30.670 ,-63.70% ,
+8 ,2018 ,South ,$95.793 ,$138.856 ,44.95% ,
 
 
 

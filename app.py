@@ -16,7 +16,8 @@ def client():
     print(account_id, account_key, account_token)
     client = boto3.client("textract", aws_access_key_id=account_id,
                           aws_secret_access_key=account_key,
-                          aws_session_token=account_token)
+                          aws_session_token=account_token,
+                          region_name='us-east-1')
     return client
 
 
