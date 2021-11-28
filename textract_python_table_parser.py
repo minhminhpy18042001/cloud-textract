@@ -123,8 +123,7 @@ def use(file_name, account):
     with open(output_file, "wt") as fout:
         fout.write(table_csv)
     # show the results
-    table = pd.read_csv('output.csv', encoding='latin-1',
-                        error_bad_lines=False)
+    table = pd.read_csv('output.csv', encoding='latin-1',error_bad_lines=False)
     output_json = html_to_json.convert(table.to_html())
     return table.to_html()
 
