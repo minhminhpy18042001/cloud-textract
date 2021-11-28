@@ -9,6 +9,7 @@ from pprint import pprint
 import pandas as pd
 import html_to_json
 from trp import Document
+import app
 
 
 def get_rows_columns_map(table_result, blocks_map):
@@ -45,19 +46,17 @@ def get_text(result, blocks_map):
 
 
 def get_key_AWS():
-    client = boto3.client("textract", aws_access_key_id="ASIA47S4R7F2PFDRBFTN",
-                          aws_secret_access_key="iToFXECvjXOPRWwAKMwCzqBkW8Lu1iKEBkELQCRI",
-                          aws_session_token="FwoGZXIvYXdzEPv//////////wEaDOxZMKTwYnHsws2mhyLPAeG9W4ruHIYRCIg0u0MXyXLVRlX/d2dD/xGUVgiZyoD+QV71mYeHxvYvj9WMwY9zgsZgisZuooxh/4SIeU9ZE741Y2cwy+EkJ5QNC8EkAbokbJ6JVzk0kdisIimKYEOO74X2/6lKawpJYKszL/APhZRo7OyiLpN1jvAPPYmQ/HXqldhvvB3lgVVXT+t4+wBxD1Zr3JZfLA82GLzdZ9q1h6ePTIfEZ9Z1XesSnOVqq56CNuU/5Bi7SUQUApbIICzWhoHQJen/Pq3URfPAj8Q3IijdwIuNBjIt7OF5Ve/h22Cd4RHdmHQgx9J70XD91+64piU3t9mnA1XznLIFB8ftLAZAtsaL")
+    client = app.client()
     return client
 
 
-def get_table_csv_results(file_name):
+def get_table_csv_results(file_name, account):
 
     img_test = file_name.read()
     bytes_test = bytearray(img_test)
     print('Image loaded', file_name)
 
-    client = get_key_AWS()
+    client = account
 
     response = client.analyze_document(
         Document={'Bytes': bytes_test}, FeatureTypes=['TABLES'])
@@ -116,8 +115,8 @@ def main(file_name):
     print(table_html)
 
 
-def use(file_name):
-    table_csv = get_table_csv_results(file_name)
+def use(file_name, account):
+    table_csv = get_table_csv_results(file_name, account)
     # print(table_csv)
     output_file = 'output.csv'
     # replace content
