@@ -42,8 +42,20 @@ def login():
     account_id = request.form.get("aws_id")
     account_key = request.form.get("aws_key")
     account_token = request.form.get("aws_token")
-    print(account_id, account_key, account_token)
-    return render_template("index.html", jsonData=json.dumps({}))
+    #print(account_id, account_key, account_token)
+    try:
+        with open('test1.png', 'rb') as file:
+            binaryFile = file.read()
+        textractclient = client()
+        response = textractclient.detect_document_text(
+        Document={
+            'Bytes': binaryFile
+        }
+    )
+        return render_template("index.html", jsonData=json.dumps({}))
+    except:
+        print("Error key")
+        return render_template("home.html")
 
 
 @ app.route("/extracttext", methods=["POST"])
